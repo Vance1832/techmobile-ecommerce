@@ -2,6 +2,8 @@
 
 A responsive, front-end e-commerce store for genuine **Apple & Samsung** devices, set in Thailand (prices in Thai Baht ฿). Built with **vanilla HTML, CSS and JavaScript** — no frameworks, no build step, no backend. All cart, wishlist and theme state is persisted in `localStorage`.
 
+**🔗 Live demo: [vance1832.github.io/techmobile-ecommerce](https://vance1832.github.io/techmobile-ecommerce/)**
+
 ![TechMobile home page](screenshots/home.png)
 
 ---
