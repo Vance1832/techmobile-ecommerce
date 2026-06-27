@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — TechMobile</title>
+  <meta name="description" content="Checkout — TechMobile (demo).">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@300;400;700;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/checkout.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <script>
+    if (localStorage.getItem('techmobile_theme') === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Tech<span class="logo-accent">Mobile</span></a>
+
+      <div class="nav-search">
+        <svg class="ic-svg search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+        <input type="search" class="search-input" placeholder="Search iPhone, Galaxy, MacBook…" aria-label="Search products">
+      </div>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+        <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+          <svg class="ic-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5C5 16 2.5 12.6 2.5 9.2 2.5 6.6 4.6 5 6.8 5c1.7 0 3.2 1 4 2.3.8-1.3 2.3-2.3 4-2.3 2.2 0 4.3 1.6 4.3 4.2 0 3.4-2.5 6.8-9.5 11.3z"/></svg>
+          <span class="nav-badge wish-badge hidden" aria-live="polite">0</span>
+        </a>
+        <a href="cart.html" class="icon-btn" aria-label="Cart">
+          <svg class="ic-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-.9 11.2a1.2 1.2 0 0 1-1.2 1.1H8.1a1.2 1.2 0 0 1-1.2-1.1L6 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+          <span class="nav-badge cart-badge hidden" aria-live="polite">0</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg class="ic-svg" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <div class="checkout-head"><h1>Checkout</h1></div>
+
+    <!-- Step indicator -->
+    <div class="steps" aria-hidden="true">
+      <div class="step done"><span class="num">1</span> Contact</div>
+      <span class="step-divider"></span>
+      <div class="step done"><span class="num">2</span> Shipping</div>
+      <span class="step-divider"></span>
+      <div class="step done"><span class="num">3</span> Payment</div>
+      <span class="step-divider"></span>
+      <div class="step"><span class="num">4</span> Confirm</div>
+    </div>
+
+    <form id="checkout-form" novalidate>
+      <div class="checkout-layout">
+        <div>
+          <!-- Section 1: Contact -->
+          <section class="form-section">
+            <h2>Contact details</h2>
+            <div class="form-grid">
+              <div class="field col-span">
+                <label for="fullname">Full Name</label>
+                <input id="fullname" name="fullname" type="text" required autocomplete="name">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required autocomplete="email">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" required autocomplete="tel">
+                <span class="error-msg"></span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 2: Shipping -->
+          <section class="form-section">
+            <h2>Shipping address</h2>
+            <div class="form-grid">
+              <div class="field col-span">
+                <label for="street">Address (house no., street, soi)</label>
+                <input id="street" name="street" type="text" required autocomplete="street-address">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="city">District / Khet</label>
+                <input id="city" name="city" type="text" required>
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="state">Province</label>
+                <select id="state" name="state" required>
+                  <option value="">Select…</option>
+                  <option>Bangkok</option>
+                  <option>Nonthaburi</option>
+                  <option>Samut Prakan</option>
+                  <option>Pathum Thani</option>
+                  <option>Chiang Mai</option>
+                  <option>Chon Buri</option>
+                  <option>Phuket</option>
+                  <option>Khon Kaen</option>
+                  <option>Nakhon Ratchasima</option>
+                  <option>Songkhla</option>
+                  <option>Other province</option>
+                </select>
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="zip">Postal code</label>
+                <input id="zip" name="zip" type="text" inputmode="numeric" maxlength="5" required autocomplete="postal-code">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="country">Country</label>
+                <select id="country" name="country" required>
+                  <option value="Thailand" selected>Thailand</option>
+                </select>
+                <span class="error-msg"></span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 3: Payment -->
+          <section class="form-section">
+            <h2>Payment</h2>
+            <p class="demo-note">Secured checkout. This is a demo store — please do not enter real card details.</p>
+            <div class="form-grid">
+              <div class="field col-span">
+                <label for="card">Card Number</label>
+                <input id="card" name="card" type="text" inputmode="numeric"
+                       placeholder="#### #### #### ####" maxlength="19" required>
+                <span class="error-msg"></span>
+              </div>
+              <div class="field col-span">
+                <label for="cardname">Cardholder Name</label>
+                <input id="cardname" name="cardname" type="text" required>
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="expiry">Expiry (MM/YY)</label>
+                <input id="expiry" name="expiry" type="text" placeholder="MM/YY" maxlength="5" required>
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="cvv">CVV</label>
+                <input id="cvv" name="cvv" type="text" inputmode="numeric" maxlength="4" required>
+                <span class="error-msg"></span>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Section 4: Order summary -->
+        <aside class="checkout-summary" aria-label="Order summary">
+          <h2>Order summary</h2>
+          <div id="summary-items"><!-- JS injects items --></div>
+          <div class="summary-total" style="margin-top:var(--space-md)">
+            <span>Total</span><span id="summary-total">฿0</span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block place-order-btn">Place Order</button>
+        </aside>
+      </div>
+    </form>
+  </main>
+
+  <!-- Success overlay -->
+  <div class="success-overlay" id="success-overlay">
+    <div class="check" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>
+    </div>
+    <h1>Order placed</h1>
+    <p>Thank you for shopping with TechMobile. A confirmation has been sent to your email. This is a demo, so no real order was created.</p>
+    <a class="btn btn-primary btn-lg" href="index.html">Back to home</a>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Tech<span class="logo-accent">Mobile</span></a>
+        <p>Thailand's destination for genuine Apple and Samsung devices. Authorised products, nationwide delivery and expert in-store care.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="products.html?category=phones">Phones</a></li>
+          <li><a href="products.html?category=laptops">Laptops</a></li>
+          <li><a href="products.html?category=tablets">Tablets</a></li>
+          <li><a href="products.html?category=audio">Audio</a></li>
+          <li><a href="products.html?category=wearables">Wearables</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit &amp; Contact</h4>
+        <ul>
+          <li>518/5 Maneeya Center, Ploenchit Road,<br>Lumphini, Pathum Wan, Bangkok 10330</li>
+          <li>support@techmobile.co.th</li>
+          <li>+66 2 251 0000</li>
+        </ul>
+        <div class="footer-social">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">LINE</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 TechMobile Co., Ltd. &mdash; Demo project, no real transactions. Apple and Samsung product names are trademarks of their respective owners.</div>
+  </footer>
+
+  <script type="module" src="js/checkout.js"></script>
+</body>
+</html>

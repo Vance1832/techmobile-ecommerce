@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — TechMobile</title>
+  <meta name="description" content="Get in touch with TechMobile.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@300;400;700;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <script>
+    if (localStorage.getItem('techmobile_theme') === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Tech<span class="logo-accent">Mobile</span></a>
+
+      <div class="nav-search">
+        <svg class="ic-svg search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+        <input type="search" class="search-input" placeholder="Search iPhone, Galaxy, MacBook…" aria-label="Search products">
+      </div>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+        <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+          <svg class="ic-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5C5 16 2.5 12.6 2.5 9.2 2.5 6.6 4.6 5 6.8 5c1.7 0 3.2 1 4 2.3.8-1.3 2.3-2.3 4-2.3 2.2 0 4.3 1.6 4.3 4.2 0 3.4-2.5 6.8-9.5 11.3z"/></svg>
+          <span class="nav-badge wish-badge hidden" aria-live="polite">0</span>
+        </a>
+        <a href="cart.html" class="icon-btn" aria-label="Cart">
+          <svg class="ic-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-.9 11.2a1.2 1.2 0 0 1-1.2 1.1H8.1a1.2 1.2 0 0 1-1.2-1.1L6 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+          <span class="nav-badge cart-badge hidden" aria-live="polite">0</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg class="ic-svg" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <h1>Get in <span class="accent">Touch</span></h1>
+      <p>Questions, feedback or just want to say hi? We'd love to hear from you.</p>
+    </section>
+
+    <section class="section container">
+      <div class="contact-layout">
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="field">
+            <label for="c-name">Name</label>
+            <input id="c-name" type="text" required>
+            <span class="error-msg"></span>
+          </div>
+          <div class="field">
+            <label for="c-email">Email</label>
+            <input id="c-email" type="email" required>
+            <span class="error-msg"></span>
+          </div>
+          <div class="field">
+            <label for="c-subject">Subject</label>
+            <input id="c-subject" type="text" required>
+            <span class="error-msg"></span>
+          </div>
+          <div class="field">
+            <label for="c-message">Message</label>
+            <textarea id="c-message" required></textarea>
+            <span class="error-msg"></span>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <div class="form-success hidden" id="contact-success">Message sent. Our team will reply within 24 hours.</div>
+        </form>
+
+        <aside class="contact-info">
+          <h3>Contact information</h3>
+          <div class="info-row">
+            <span class="ic" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+            <div><div class="label">Store &amp; office</div><div class="val">518/5 Maneeya Center, Ploenchit Road, Lumphini, Pathum Wan, Bangkok 10330</div></div>
+          </div>
+          <div class="info-row">
+            <span class="ic" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6 8.5-6"/></svg></span>
+            <div><div class="label">Email</div><div class="val">support@techmobile.co.th</div></div>
+          </div>
+          <div class="info-row">
+            <span class="ic" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24"><path d="M5 4h3l1.5 5-2 1.5a12 12 0 0 0 6 6l1.5-2 5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
+            <div><div class="label">Phone</div><div class="val">+66 2 251 0000</div></div>
+          </div>
+          <div class="info-row">
+            <span class="ic" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+            <div><div class="label">Opening hours</div><div class="val">Mon–Sat 10:00–20:00 · Sun 11:00–19:00 (ICT)</div></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Tech<span class="logo-accent">Mobile</span></a>
+        <p>Thailand's destination for genuine Apple and Samsung devices. Authorised products, nationwide delivery and expert in-store care.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="products.html?category=phones">Phones</a></li>
+          <li><a href="products.html?category=laptops">Laptops</a></li>
+          <li><a href="products.html?category=tablets">Tablets</a></li>
+          <li><a href="products.html?category=audio">Audio</a></li>
+          <li><a href="products.html?category=wearables">Wearables</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit &amp; Contact</h4>
+        <ul>
+          <li>518/5 Maneeya Center, Ploenchit Road,<br>Lumphini, Pathum Wan, Bangkok 10330</li>
+          <li>support@techmobile.co.th</li>
+          <li>+66 2 251 0000</li>
+        </ul>
+        <div class="footer-social">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">LINE</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 TechMobile Co., Ltd. &mdash; Demo project, no real transactions. Apple and Samsung product names are trademarks of their respective owners.</div>
+  </footer>
+
+  <script type="module">
+    import { initUI } from './js/ui.js';
+    initUI();
+
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('contact-success');
+    const setError = (input, message) => {
+      input.classList.toggle('invalid', !!message);
+      const msg = input.parentElement.querySelector('.error-msg');
+      if (msg) msg.textContent = message || '';
+      return !message;
+    };
+    const isEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = document.getElementById('c-name');
+      const email = document.getElementById('c-email');
+      const subject = document.getElementById('c-subject');
+      const message = document.getElementById('c-message');
+      let ok = true;
+      if (!setError(name, name.value.trim().length >= 2 ? '' : 'Please enter your name.')) ok = false;
+      if (!setError(email, isEmail(email.value.trim()) ? '' : 'Enter a valid email.')) ok = false;
+      if (!setError(subject, subject.value.trim().length >= 2 ? '' : 'Please add a subject.')) ok = false;
+      if (!setError(message, message.value.trim().length >= 10 ? '' : 'Message must be at least 10 characters.')) ok = false;
+      if (!ok) return;
+      form.reset();
+      success.classList.remove('hidden');
+      setTimeout(() => success.classList.add('hidden'), 6000);
+    });
+  </script>
+</body>
+</html>

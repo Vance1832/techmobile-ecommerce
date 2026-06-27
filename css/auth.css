@@ -1,0 +1,112 @@
+/* ============================================================
+   auth.css — Login / Register card with tabs
+   ============================================================ */
+
+.auth-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl) var(--space-md);
+  min-height: calc(100vh - var(--navbar-height));
+}
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-xl);
+}
+.auth-card .brand {
+  text-align: center;
+  font-family: var(--font-logo);
+  font-weight: 800;
+  font-size: 1.7rem;
+  letter-spacing: -0.035em;
+  margin-bottom: var(--space-xs);
+}
+.auth-card .brand .logo-accent {
+  font-weight: 300;
+  background: var(--logo-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.auth-sub {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-lg);
+}
+
+.auth-tabs {
+  display: flex;
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  margin-bottom: var(--space-lg);
+}
+.auth-tabs button {
+  flex: 1;
+  padding: 0.6rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  transition: background var(--transition), color var(--transition);
+}
+.auth-tabs button.active {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.auth-form { display: none; flex-direction: column; gap: var(--space-md); }
+.auth-form.active { display: flex; }
+
+.auth-form .field { display: flex; flex-direction: column; gap: 6px; }
+.auth-form label { font-weight: 600; font-size: 0.85rem; }
+.auth-form input {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-card);
+}
+.auth-form input:focus { border-color: var(--color-primary); outline: none; }
+.auth-form input.invalid { border-color: var(--color-danger); }
+.auth-form .error-msg { color: var(--color-danger); font-size: 0.78rem; min-height: 1em; }
+
+.auth-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.85rem;
+}
+.checkbox-row input { accent-color: var(--color-primary); width: 16px; height: 16px; }
+.auth-link { color: var(--color-primary); font-weight: 600; }
+
+/* Password strength bar */
+.strength { margin-top: 4px; }
+.strength-bar {
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--color-border);
+  overflow: hidden;
+}
+.strength-bar span {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: var(--radius-pill);
+  transition: width var(--transition), background var(--transition);
+}
+.strength.weak   .strength-bar span { width: 33%;  background: var(--color-danger); }
+.strength.fair   .strength-bar span { width: 66%;  background: var(--color-warning); }
+.strength.strong .strength-bar span { width: 100%; background: var(--color-success); }
+.strength-label { font-size: 0.75rem; margin-top: 4px; color: var(--color-text-muted); }

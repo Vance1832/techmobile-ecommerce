@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechMobile — Genuine Apple &amp; Samsung in Thailand</title>
+  <meta name="description" content="TechMobile — authorised reseller of genuine Apple and Samsung devices in Thailand. iPhone, Galaxy, MacBook, iPad and more, with nationwide delivery.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@300;400;700;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <!-- Prevent dark-mode flash: apply theme before paint -->
+  <script>
+    if (localStorage.getItem('techmobile_theme') === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Tech<span class="logo-accent">Mobile</span></a>
+
+      <div class="nav-search">
+        <svg class="ic-svg search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+        <input type="search" class="search-input" placeholder="Search iPhone, Galaxy, MacBook…" aria-label="Search products">
+      </div>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+        <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+          <svg class="ic-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5C5 16 2.5 12.6 2.5 9.2 2.5 6.6 4.6 5 6.8 5c1.7 0 3.2 1 4 2.3.8-1.3 2.3-2.3 4-2.3 2.2 0 4.3 1.6 4.3 4.2 0 3.4-2.5 6.8-9.5 11.3z"/></svg>
+          <span class="nav-badge wish-badge hidden" aria-live="polite">0</span>
+        </a>
+        <a href="cart.html" class="icon-btn" aria-label="Cart">
+          <svg class="ic-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-.9 11.2a1.2 1.2 0 0 1-1.2 1.1H8.1a1.2 1.2 0 0 1-1.2-1.1L6 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+          <span class="nav-badge cart-badge hidden" aria-live="polite">0</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg class="ic-svg" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <h1>The latest tech,<br><span class="accent">delivered across Thailand.</span></h1>
+          <p>Genuine iPhone, Galaxy, MacBook, iPad and more — at honest prices, with nationwide delivery and local warranty support.</p>
+          <div class="hero-cta">
+            <a href="products.html" class="btn btn-primary btn-lg">Shop all products</a>
+            <a href="products.html?filter=sale" class="btn btn-outline btn-lg hero-outline">View offers</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="assets/images/p21-0.jpg?v=2" alt="A TechMobile specialist helping a customer explore the latest devices in store" width="600" height="400" loading="eager">
+        </div>
+      </div>
+      <a href="#categories" class="scroll-indicator" aria-label="Scroll to categories">
+        <svg class="ic-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </a>
+    </section>
+
+    <!-- ============ CATEGORIES ============ -->
+    <section class="section container" id="categories">
+      <div class="section-head"><h2>Shop by category</h2></div>
+      <div class="category-strip" id="category-strip"><!-- JS injects category cards --></div>
+    </section>
+
+    <!-- ============ FEATURED ============ -->
+    <section class="section container">
+      <div class="section-head">
+        <h2>Featured this week</h2>
+        <a href="products.html" class="view-all">View all products</a>
+      </div>
+      <div class="product-grid" id="featured-grid"><!-- JS injects 4 cards --></div>
+    </section>
+  </main>
+
+  <!-- ============ PROMO ============ -->
+  <div class="promo-banner">Free nationwide delivery on every order over ฿1,500 · Genuine products with local warranty</div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Tech<span class="logo-accent">Mobile</span></a>
+        <p>Thailand's destination for genuine Apple and Samsung devices. Authorised products, nationwide delivery and expert in-store care.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="products.html?category=phones">Phones</a></li>
+          <li><a href="products.html?category=laptops">Laptops</a></li>
+          <li><a href="products.html?category=tablets">Tablets</a></li>
+          <li><a href="products.html?category=audio">Audio</a></li>
+          <li><a href="products.html?category=wearables">Wearables</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit &amp; Contact</h4>
+        <ul>
+          <li>518/5 Maneeya Center, Ploenchit Road,<br>Lumphini, Pathum Wan, Bangkok 10330</li>
+          <li>support@techmobile.co.th</li>
+          <li>+66 2 251 0000</li>
+        </ul>
+        <div class="footer-social">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">LINE</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 TechMobile Co., Ltd. &mdash; Demo project, no real transactions. Apple and Samsung product names are trademarks of their respective owners.</div>
+  </footer>
+
+  <script type="module">
+    import { initUI, productCardHTML, initProductCardActions } from './js/ui.js';
+    import products, { categories } from './js/data.js';
+
+    initUI();
+    initProductCardActions();
+
+    // Categories strip
+    document.getElementById('category-strip').innerHTML = categories.map(c => `
+      <a class="category-card" href="products.html?category=${c.key}">
+        <span class="cat-icon" aria-hidden="true">${c.icon}</span>
+        <span class="cat-name">${c.label}</span>
+      </a>`).join('');
+
+    // Featured picks: first 4 "Best Seller"/"New" or just first 4
+    const featured = products.filter(p => p.badge).slice(0, 4);
+    document.getElementById('featured-grid').innerHTML =
+      featured.map(productCardHTML).join('');
+  </script>
+</body>
+</html>

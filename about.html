@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — TechMobile</title>
+  <meta name="description" content="About TechMobile — who we are and what we stand for.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@300;400;700;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <script>
+    if (localStorage.getItem('techmobile_theme') === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Tech<span class="logo-accent">Mobile</span></a>
+
+      <div class="nav-search">
+        <svg class="ic-svg search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+        <input type="search" class="search-input" placeholder="Search iPhone, Galaxy, MacBook…" aria-label="Search products">
+      </div>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+        <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+          <svg class="ic-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5C5 16 2.5 12.6 2.5 9.2 2.5 6.6 4.6 5 6.8 5c1.7 0 3.2 1 4 2.3.8-1.3 2.3-2.3 4-2.3 2.2 0 4.3 1.6 4.3 4.2 0 3.4-2.5 6.8-9.5 11.3z"/></svg>
+          <span class="nav-badge wish-badge hidden" aria-live="polite">0</span>
+        </a>
+        <a href="cart.html" class="icon-btn" aria-label="Cart">
+          <svg class="ic-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-.9 11.2a1.2 1.2 0 0 1-1.2 1.1H8.1a1.2 1.2 0 0 1-1.2-1.1L6 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+          <span class="nav-badge cart-badge hidden" aria-live="polite">0</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg class="ic-svg" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <h1>We are <span class="accent">TechMobile</span></h1>
+      <p>A Thai retailer for genuine Apple and Samsung devices — fair prices, honest advice and care that lasts well beyond the sale.</p>
+    </section>
+
+    <section class="section container">
+      <p class="mission">
+        TechMobile opened its first counter in Bangkok with one belief: buying genuine Apple and
+        Samsung devices should be simple, fair and personal. Today we carry the full line-up of
+        iPhone, Galaxy, MacBook, iPad and wearables — every unit sourced through authorised channels,
+        so the product in your hand is exactly what the maker intended. No grey imports, no surprises.
+      </p>
+
+      <div class="feature-cards">
+        <div class="feature-card">
+          <span class="icon" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg></span>
+          <h3>Nationwide Delivery</h3>
+          <p>Free delivery on orders over ฿1,500, with most parcels arriving within 1–3 business days across Thailand.</p>
+        </div>
+        <div class="feature-card">
+          <span class="icon" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <h3>Genuine &amp; Insured</h3>
+          <p>Authorised stock only, backed by official manufacturer warranty and secure payment at checkout.</p>
+        </div>
+        <div class="feature-card">
+          <span class="icon" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24"><path d="M5 12a7 7 0 0 1 14 0v4"/><rect x="3" y="12" width="4" height="6" rx="1.6"/><rect x="17" y="12" width="4" height="6" rx="1.6"/><path d="M19 18a3 3 0 0 1-3 3h-3"/></svg></span>
+          <h3>Local Support</h3>
+          <p>A Thai-speaking team for setup, trade-in and after-sales care — by phone, LINE or in store.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="section-head"><h2>Meet the team</h2></div>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="assets/images/team-1.jpg?v=2" alt="Portrait of Nattapong Aksornsri" loading="lazy">
+          <h3>Nattapong Aksornsri</h3>
+          <p class="role">Founder &amp; Managing Director</p>
+        </div>
+        <div class="team-card">
+          <img src="assets/images/team-2.jpg?v=2" alt="Portrait of Pimchanok Saetang" loading="lazy">
+          <h3>Pimchanok Saetang</h3>
+          <p class="role">Head of Retail</p>
+        </div>
+        <div class="team-card">
+          <img src="assets/images/team-3.jpg?v=2" alt="Portrait of Thanawat Kittisak" loading="lazy">
+          <h3>Thanawat Kittisak</h3>
+          <p class="role">Customer Care Lead</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Tech<span class="logo-accent">Mobile</span></a>
+        <p>Thailand's destination for genuine Apple and Samsung devices. Authorised products, nationwide delivery and expert in-store care.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="products.html?category=phones">Phones</a></li>
+          <li><a href="products.html?category=laptops">Laptops</a></li>
+          <li><a href="products.html?category=tablets">Tablets</a></li>
+          <li><a href="products.html?category=audio">Audio</a></li>
+          <li><a href="products.html?category=wearables">Wearables</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit &amp; Contact</h4>
+        <ul>
+          <li>518/5 Maneeya Center, Ploenchit Road,<br>Lumphini, Pathum Wan, Bangkok 10330</li>
+          <li>support@techmobile.co.th</li>
+          <li>+66 2 251 0000</li>
+        </ul>
+        <div class="footer-social">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">LINE</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 TechMobile Co., Ltd. &mdash; Demo project, no real transactions. Apple and Samsung product names are trademarks of their respective owners.</div>
+  </footer>
+
+  <script type="module">
+    import { initUI } from './js/ui.js';
+    initUI();
+  </script>
+</body>
+</html>

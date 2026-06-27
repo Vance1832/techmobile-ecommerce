@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product — TechMobile</title>
+  <meta name="description" content="Product details — TechMobile electronics store.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@300;400;700;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <script>
+    if (localStorage.getItem('techmobile_theme') === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Tech<span class="logo-accent">Mobile</span></a>
+
+      <div class="nav-search">
+        <svg class="ic-svg search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+        <input type="search" class="search-input" placeholder="Search iPhone, Galaxy, MacBook…" aria-label="Search products">
+      </div>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+        <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+          <svg class="ic-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5C5 16 2.5 12.6 2.5 9.2 2.5 6.6 4.6 5 6.8 5c1.7 0 3.2 1 4 2.3.8-1.3 2.3-2.3 4-2.3 2.2 0 4.3 1.6 4.3 4.2 0 3.4-2.5 6.8-9.5 11.3z"/></svg>
+          <span class="nav-badge wish-badge hidden" aria-live="polite">0</span>
+        </a>
+        <a href="cart.html" class="icon-btn" aria-label="Cart">
+          <svg class="ic-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-.9 11.2a1.2 1.2 0 0 1-1.2 1.1H8.1a1.2 1.2 0 0 1-1.2-1.1L6 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+          <span class="nav-badge cart-badge hidden" aria-live="polite">0</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg class="ic-svg" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <a href="products.html" class="detail-back">← Back to products</a>
+    <div id="detail-root"><!-- JS injects product detail --></div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Tech<span class="logo-accent">Mobile</span></a>
+        <p>Thailand's destination for genuine Apple and Samsung devices. Authorised products, nationwide delivery and expert in-store care.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="products.html?category=phones">Phones</a></li>
+          <li><a href="products.html?category=laptops">Laptops</a></li>
+          <li><a href="products.html?category=tablets">Tablets</a></li>
+          <li><a href="products.html?category=audio">Audio</a></li>
+          <li><a href="products.html?category=wearables">Wearables</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit &amp; Contact</h4>
+        <ul>
+          <li>518/5 Maneeya Center, Ploenchit Road,<br>Lumphini, Pathum Wan, Bangkok 10330</li>
+          <li>support@techmobile.co.th</li>
+          <li>+66 2 251 0000</li>
+        </ul>
+        <div class="footer-social">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">LINE</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 TechMobile Co., Ltd. &mdash; Demo project, no real transactions. Apple and Samsung product names are trademarks of their respective owners.</div>
+  </footer>
+
+  <script type="module" src="js/detail.js"></script>
+</body>
+</html>

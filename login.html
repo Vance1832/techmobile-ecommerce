@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In — TechMobile</title>
+  <meta name="description" content="Login or create your TechMobile account (demo).">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@300;400;700;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <script>
+    if (localStorage.getItem('techmobile_theme') === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Tech<span class="logo-accent">Mobile</span></a>
+
+      <div class="nav-search">
+        <svg class="ic-svg search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+        <input type="search" class="search-input" placeholder="Search iPhone, Galaxy, MacBook…" aria-label="Search products">
+      </div>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+        <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+          <svg class="ic-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5C5 16 2.5 12.6 2.5 9.2 2.5 6.6 4.6 5 6.8 5c1.7 0 3.2 1 4 2.3.8-1.3 2.3-2.3 4-2.3 2.2 0 4.3 1.6 4.3 4.2 0 3.4-2.5 6.8-9.5 11.3z"/></svg>
+          <span class="nav-badge wish-badge hidden" aria-live="polite">0</span>
+        </a>
+        <a href="cart.html" class="icon-btn" aria-label="Cart">
+          <svg class="ic-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-.9 11.2a1.2 1.2 0 0 1-1.2 1.1H8.1a1.2 1.2 0 0 1-1.2-1.1L6 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+          <span class="nav-badge cart-badge hidden" aria-live="polite">0</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg class="ic-svg" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="auth-wrap">
+      <div class="auth-card">
+        <div class="brand">Tech<span class="logo-accent">Mobile</span></div>
+        <p class="auth-sub">Sign in to track orders, save devices and check out faster.</p>
+
+        <div class="auth-tabs" role="tablist">
+          <button id="tab-login" class="active" role="tab" aria-selected="true">Login</button>
+          <button id="tab-register" role="tab" aria-selected="false">Register</button>
+        </div>
+
+        <!-- Login -->
+        <form class="auth-form active" id="login-form" novalidate>
+          <div class="field">
+            <label for="login-email">Email</label>
+            <input id="login-email" type="email" required autocomplete="email">
+            <span class="error-msg"></span>
+          </div>
+          <div class="field">
+            <label for="login-password">Password</label>
+            <input id="login-password" type="password" required autocomplete="current-password">
+            <span class="error-msg"></span>
+          </div>
+          <div class="auth-row">
+            <label class="checkbox-row"><input type="checkbox" id="remember"> Remember me</label>
+            <a href="#" class="auth-link">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+        </form>
+
+        <!-- Register -->
+        <form class="auth-form" id="register-form" novalidate>
+          <div class="field">
+            <label for="reg-name">Full Name</label>
+            <input id="reg-name" type="text" required autocomplete="name">
+            <span class="error-msg"></span>
+          </div>
+          <div class="field">
+            <label for="reg-email">Email</label>
+            <input id="reg-email" type="email" required autocomplete="email">
+            <span class="error-msg"></span>
+          </div>
+          <div class="field">
+            <label for="reg-password">Password</label>
+            <input id="reg-password" type="password" required autocomplete="new-password">
+            <div class="strength" id="strength">
+              <div class="strength-bar"><span></span></div>
+              <div class="strength-label" id="strength-label">Enter a password</div>
+            </div>
+            <span class="error-msg"></span>
+          </div>
+          <div class="field">
+            <label for="reg-confirm">Confirm Password</label>
+            <input id="reg-confirm" type="password" required autocomplete="new-password">
+            <span class="error-msg"></span>
+          </div>
+          <label class="checkbox-row"><input type="checkbox" id="terms"> I agree to the Terms &amp; Conditions</label>
+          <span class="error-msg" id="terms-error"></span>
+          <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Tech<span class="logo-accent">Mobile</span></a>
+        <p>Thailand's destination for genuine Apple and Samsung devices. Authorised products, nationwide delivery and expert in-store care.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="products.html?category=phones">Phones</a></li>
+          <li><a href="products.html?category=laptops">Laptops</a></li>
+          <li><a href="products.html?category=tablets">Tablets</a></li>
+          <li><a href="products.html?category=audio">Audio</a></li>
+          <li><a href="products.html?category=wearables">Wearables</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit &amp; Contact</h4>
+        <ul>
+          <li>518/5 Maneeya Center, Ploenchit Road,<br>Lumphini, Pathum Wan, Bangkok 10330</li>
+          <li>support@techmobile.co.th</li>
+          <li>+66 2 251 0000</li>
+        </ul>
+        <div class="footer-social">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">LINE</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 TechMobile Co., Ltd. &mdash; Demo project, no real transactions. Apple and Samsung product names are trademarks of their respective owners.</div>
+  </footer>
+
+  <script type="module">
+    import { initUI } from './js/ui.js';
+    initUI();
+
+    const tabLogin = document.getElementById('tab-login');
+    const tabRegister = document.getElementById('tab-register');
+    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
+
+    function switchTab(toRegister) {
+      tabLogin.classList.toggle('active', !toRegister);
+      tabRegister.classList.toggle('active', toRegister);
+      tabLogin.setAttribute('aria-selected', String(!toRegister));
+      tabRegister.setAttribute('aria-selected', String(toRegister));
+      loginForm.classList.toggle('active', !toRegister);
+      registerForm.classList.toggle('active', toRegister);
+    }
+    tabLogin.addEventListener('click', () => switchTab(false));
+    tabRegister.addEventListener('click', () => switchTab(true));
+
+    const setError = (input, message) => {
+      input.classList.toggle('invalid', !!message);
+      const msg = input.parentElement.querySelector('.error-msg');
+      if (msg) msg.textContent = message || '';
+      return !message;
+    };
+    const isEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+    // Login submit
+    loginForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const email = document.getElementById('login-email');
+      const pass = document.getElementById('login-password');
+      let ok = true;
+      if (!setError(email, isEmail(email.value.trim()) ? '' : 'Enter a valid email.')) ok = false;
+      if (!setError(pass, pass.value.length >= 8 ? '' : 'Password must be at least 8 characters.')) ok = false;
+      if (!ok) return;
+      alert('Welcome! (Demo mode — no real auth)');
+      location.href = 'index.html';
+    });
+
+    // Password strength
+    const pw = document.getElementById('reg-password');
+    const strength = document.getElementById('strength');
+    const strengthLabel = document.getElementById('strength-label');
+    function scorePassword(p) {
+      let score = 0;
+      if (p.length >= 8) score++;
+      if (/[A-Z]/.test(p) && /[a-z]/.test(p)) score++;
+      if (/\d/.test(p)) score++;
+      if (/[^A-Za-z0-9]/.test(p)) score++;
+      return score;
+    }
+    pw.addEventListener('input', () => {
+      const s = scorePassword(pw.value);
+      strength.classList.remove('weak', 'fair', 'strong');
+      if (!pw.value) { strengthLabel.textContent = 'Enter a password'; return; }
+      if (s <= 1)       { strength.classList.add('weak');   strengthLabel.textContent = 'Weak password'; }
+      else if (s <= 3)  { strength.classList.add('fair');   strengthLabel.textContent = 'Fair password'; }
+      else              { strength.classList.add('strong'); strengthLabel.textContent = 'Strong password'; }
+    });
+
+    // Register submit
+    registerForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = document.getElementById('reg-name');
+      const email = document.getElementById('reg-email');
+      const pass = document.getElementById('reg-password');
+      const confirm = document.getElementById('reg-confirm');
+      const terms = document.getElementById('terms');
+      let ok = true;
+      if (!setError(name, name.value.trim().length >= 2 ? '' : 'Please enter your name.')) ok = false;
+      if (!setError(email, isEmail(email.value.trim()) ? '' : 'Enter a valid email.')) ok = false;
+      if (!setError(pass, pass.value.length >= 8 ? '' : 'Password must be at least 8 characters.')) ok = false;
+      if (!setError(confirm, confirm.value === pass.value && confirm.value ? '' : 'Passwords do not match.')) ok = false;
+      const termsError = document.getElementById('terms-error');
+      if (!terms.checked) { termsError.textContent = 'You must accept the terms.'; ok = false; }
+      else { termsError.textContent = ''; }
+      if (!ok) return;
+      alert('Welcome! (Demo mode — no real auth)');
+      location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>
